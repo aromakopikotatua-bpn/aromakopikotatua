@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <title>Aroma Kopi Kota Tua - Reservasi</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Reservasi Meja Aroma Kopi Kota Tua" name="keywords">
+    <meta content="Reservasi online di Aroma Kopi Kota Tua dan nikmati promo menarik setiap minggu." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome (versi terbaru agar TikTok muncul) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+    
+    <style>
+        .promo-highlight {
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        .reservation-urgent {
+            position: relative;
+            background: linear-gradient(90deg, #8B4513, #D2691E, #8B4513);
+            background-size: 200% auto;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: shimmer 3s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        .benefit-item {
+            transition: transform 0.3s;
+        }
+        .benefit-item:hover {
+            transform: translateX(5px);
+        }
+        .coffee-icon {
+            color: #8B4513;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .membership-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+        .whatsapp-notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            animation: slideIn 0.5s forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .form-control-large {
+            padding: 15px;
+            height: 120px;
+            resize: none;
+        }
+        .btn-kirim {
+            padding: 12px 25px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+        }
+        .social-icon i {
+            font-size: 1.2rem;
+        }
+        .footer p,
+        .footer span,
+        .footer form,
+        .footer div,
+        .footer a {
+            font-size: 0.8rem;
+        }
+        .footer h4 {
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Notifikasi WhatsApp -->
+    <div id="whatsappNotification" class="whatsapp-notification">
+        <i class="fab fa-whatsapp mr-2"></i> Data reservasi telah dikirim ke WhatsApp!
+    </div>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">AROMA KOPI</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="our group.html" class="nav-item nav-link">Our Group</a>
+                    <a href="menu.html" class="nav-item nav-link">Menu</a>
+                    <a href="reservation.html" class="nav-item nav-link active">Reservation</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Reservasi</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="index.html">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Reservasi</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Reservasi Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="reservation position-relative overlay-top overlay-bottom">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 my-5 my-lg-0">
+                        <div class="p-5">
+                            <div class="mb-4">
+                                <h1 class="display-3 text-primary">Nikmati Pengalaman Kopi Tak Terlupakan</h1>
+                                <h1 class="text-white">Di Tengah Nuansa Kota Tua yang Autentik</h1>
+                            </div>
+                            <p class="text-white">
+                                Setiap kunjungan ke Aroma Kopi Kota Tua adalah perjalanan rasa dan waktu. 
+                                Rasakan kenikmatan kopi spesialti racikan barista profesional di tengah suasana vintage yang Instagramable.
+                            </p>
+                            <ul class="list-inline text-white m-0">
+                                <li class="py-2 benefit-item"><i class="fa fa-check text-primary mr-3"></i>Old Town Coffee terbatas - Jangan sampai kehabisan!</li>
+                                <li class="py-2 benefit-item"><i class="fa fa-check text-primary mr-3"></i>Garansi harga terbaik dengan reservasi online</li>
+                                <li class="py-2 benefit-item"><i class="fa fa-check text-primary mr-3"></i>Dapatkan promo menarik dengan menjadi member aroma kopi kota tua</li>
+                                <li class="py-2 benefit-item"><i class="fa fa-check text-primary mr-3"></i>Nuansa kota tua yang estetik dan instagramable</li>
+                                <li class="py-2 benefit-item"><i class="fa fa-check text-primary mr-3"></i>Live music eksklusif setiap akhir pekan</li>
+                            </ul>
+                            <div class="membership-badge">
+                                <i class="fas fa-crown"></i> Keanggotaan Gratis - Daftar Sekarang!
+                            </div>
+                            <p class="text-white mt-3">
+                                Jangan sampai kelewatan update terbaru, follow Instagram & TikTok kami di bawah!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
+                            <h1 class="text-white mb-4 mt-5 reservation-urgent">Reservasi Segera</h1>
+                            <p class="text-light mb-4">Amankan tempat Anda sekarang dan nikmati keuntungannya!</p>
+                            <form class="mb-5" id="reservationForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control bg-transparent border-primary p-4" placeholder="Nama Lengkap" required="required" id="namaLengkap" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control bg-transparent border-primary p-4" placeholder="Alamat Email" required="required" id="email" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control bg-transparent border-primary p-4" placeholder="Nomor Telepon" required="required" id="telepon" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="date" id="date" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Tanggal Reservasi" data-target="#date" data-toggle="datetimepicker" id="tanggal" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Waktu Reservasi" data-target="#time" data-toggle="datetimepicker" id="waktu" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select bg-transparent border-primary px-4" style="height: 49px;" id="jumlahOrang">
+                                        <option selected>Jumlah Orang</option>
+                                        <option value="1">1 Orang</option>
+                                        <option value="2">2 Orang</option>
+                                        <option value="3">3 Orang</option>
+                                        <option value="4">4 Orang</option>
+                                        <option value="5">5+ Orang</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check text-light text-left">
+                                        <input type="checkbox" class="form-check-input" id="memberCheck">
+                                        <label class="form-check-label" for="memberCheck">Saya ingin menjadi member untuk mendapatkan promo menarik</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Kirim</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reservasi End -->
+
+    <!-- Footer Start (FINAL sesuai request) -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <!-- Contact -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4">Kontak Kami</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Dekat Klinik Panacea, Balikpapan Baru</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+62 812-9725-2442</p>
+                <p class="d-flex align-items-center">
+                    <i class="fa fa-envelope mr-2"></i>
+                    <a href="mailto:aromakopikotatua@gmail.com" class="text-white">aromakopikotatua@gmail.com</a>
+                </p>
+            </div>
+            <!-- Social -->
+            <div class="col-lg-3 col-md-6 mb-5 text-center">
+                <h4 class="text-white text-uppercase mb-4">Follow Us</h4>
+                <p>Ikuti perjalanan kami di media sosial untuk cerita kopi terbaru.</p>
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2 social-icon" 
+                       href="https://www.instagram.com/aroma.kopikotatua/profilecard/?igsh=dmdqNzg2cm9xbjFn" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square social-icon" 
+                       href="https://tiktok.com/@aromakopikotatua" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Opening -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4">Jam Operasional</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Senin - Jumat</h6>
+                    <p>Tutup</p>
+                    <h6 class="text-white text-uppercase">Sabtu - Minggu</h6>
+                    <p>19.00 - 00.00</p>
+                </div>
+            </div>
+            <!-- Feedback -->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4">Kritik dan Saran</h4>
+                <p>Berikan masukan Anda untuk kami menjadi lebih baik.</p>
+                <form action="mailto:aromakopikotatua@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" class="form-control border-light mb-2" style="padding: 15px;" placeholder="Nama Anda" name="Nama" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-light mb-2" style="padding: 15px;" placeholder="Kontak Anda" name="Kontak" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control border-light form-control-large" placeholder="Kritik & Saran Anda" name="Pesan" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-kirim mt-2">Kirim</button>
+                </form>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="mb-2 text-white">Copyright &copy; <a class="font-weight-bold" href="#">Aroma Kopi Kota Tua</a>. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Kode JavaScript untuk mengirim data ke WhatsApp -->
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nama = document.getElementById('namaLengkap').value;
+            const email = document.getElementById('email').value;
+            const telepon = document.getElementById('telepon').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const waktu = document.getElementById('waktu').value;
+            const jumlahOrang = document.getElementById('jumlahOrang').value;
+            const isMember = document.getElementById('memberCheck').checked ? 'Ya' : 'Tidak';
+            
+            const message = `Halo! Saya ingin melakukan reservasi di Aroma Kopi Kota Tua:%0A%0A` +
+                            `Nama: ${nama}%0A` +
+                            `Email: ${email}%0A` +
+                            `Telepon: ${telepon}%0A` +
+                            `Tanggal: ${tanggal}%0A` +
+                            `Waktu: ${waktu}%0A` +
+                            `Jumlah Orang: ${jumlahOrang}%0A` +
+                            `Ingin Jadi Member: ${isMember}`;
+            
+            const phoneNumber = '081297252442';
+            
+            // Buka WhatsApp dengan pesan terisi
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+
+            // Info tambahan ke user
+            alert("Pesan reservasi sudah terbuka di WhatsApp Anda. Silakan tekan Kirim di WhatsApp untuk menyelesaikan reservasi.");
+        });
+    </script>
+</body>
+</html>
